@@ -94,25 +94,26 @@ const ActionBar = ({ lockAddress, network }: ActionBarProps) => {
   return (
     <>
       <div className="flex items-center justify-between">
-        <span className="text-xl font-bold text-brand-ui-primary">Members</span>
+        <span className="text-xl font-bold text-white">Members</span>
         {isManager && (
           <div className="flex gap-2">
             <Button
               variant="outlined-primary"
               size="small"
+              className="border-white group"
               disabled={onDownloadMutation.isLoading}
               onClick={() => onDownloadMutation.mutate()}
             >
               <div className="flex items-center gap-2">
                 {onDownloadMutation?.isLoading ? (
-                  <SpinnerIcon
-                    className="text-brand-ui-primary animate-spin"
+                  <SpinnerIcon className="text-white animate-spin" size={16} />
+                ) : (
+                  <CsvIcon
+                    className="text-white group-hover:text-black"
                     size={16}
                   />
-                ) : (
-                  <CsvIcon className="text-brand-ui-primary" size={16} />
                 )}
-                <span className="text-brand-ui-primary">CSV</span>
+                <span className="text-white group-hover:text-black">CSV</span>
               </div>
             </Button>
           </div>
@@ -156,15 +157,13 @@ const PopoverItem = ({
       <div className="flex gap-3 cursor-pointer" {...props}>
         {icon && (
           <div className="w-4 pt-1">
-            <Icon className="text-brand-ui-primary" icon={icon} size={20} />
+            <Icon className="text-white" icon={icon} size={20} />
           </div>
         )}
         <div className="flex flex-col text-left">
-          <span className="text-base font-bold text-brand-ui-primary">
-            {label}
-          </span>
+          <span className="text-base font-bold text-white">{label}</span>
           {description && (
-            <span className="text-xs text-brand-dark">{description}</span>
+            <span className="text-xs text-gray-200">{description}</span>
           )}
         </div>
       </div>
@@ -198,10 +197,14 @@ const ToolsMenu = ({ lockAddress, network }: TopActionBarProps) => {
         <Popover className="relative">
           <>
             <Popover.Button className="outline-none ring-0">
-              <Button>
+              <Button className="bg-gray-600 hover:bg-white group">
                 <div className="flex items-center gap-2">
-                  <Icon icon={ToolsIcon} size={20} />
-                  <span>Tools</span>
+                  <Icon
+                    icon={ToolsIcon}
+                    size={20}
+                    className="group-hover:text-black"
+                  />
+                  <span className="group-hover:text-black">Tools</span>
                 </div>
               </Button>
             </Popover.Button>
@@ -216,7 +219,7 @@ const ToolsMenu = ({ lockAddress, network }: TopActionBarProps) => {
             >
               <Popover.Panel className="absolute right-0 z-10 max-w-sm px-4 mt-3 transform w-80">
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                  <div className="relative grid gap-8 bg-white p-7">
+                  <div className="relative grid gap-8 bg-gray-800 p-7">
                     <a href={DEMO_URL} target="_blank" rel="noreferrer">
                       <PopoverItem
                         label="Preview"
@@ -408,7 +411,7 @@ export const ManageLockPage = () => {
         lockAddress={lockAddress}
         network={parseInt(network!, 10)}
       />
-      <div className="min-h-screen bg-ui-secondary-200 pb-60">
+      <div className="min-h-screen bg-[#090909] pb-60">
         <Container>
           <LockSelection />
           {!withoutParams && (

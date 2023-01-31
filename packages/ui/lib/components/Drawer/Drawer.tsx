@@ -51,18 +51,24 @@ export const Drawer = ({
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="relative w-full h-screen p-6 overflow-y-auto sm:max-w-xl bg-ui-secondary-100">
+              <div className="relative w-full h-screen p-6 overflow-y-auto sm:max-w-xl bg-gray-800">
                 <Transition.Child {...easeOutTransaction}>
                   <IconButton
-                    icon={<CloseIcon className="fill-inherit" size={20} />}
+                    icon={
+                      <CloseIcon
+                        className="fill-inherit text-white"
+                        size={20}
+                      />
+                    }
                     label="close"
                     size="tiny"
+                    className="text-white"
                     onClick={() => setIsOpen(false)}
                   />
                 </Transition.Child>
                 <div className="mt-4 space-y-2">
                   {title && (
-                    <Dialog.Title className="text-xl font-medium text-gray-800">
+                    <Dialog.Title className="text-xl font-medium text-white">
                       {title}
                     </Dialog.Title>
                   )}

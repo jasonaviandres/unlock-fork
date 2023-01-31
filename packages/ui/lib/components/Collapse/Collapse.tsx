@@ -22,7 +22,7 @@ export const Collapse = ({
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl">
+    <div className="bg-gray-800 border border-gray-800 rounded-2xl">
       <div className="flex items-start gap-3 p-4">
         <div className="col-span-full md:col-span-1">
           <Button
@@ -31,9 +31,9 @@ export const Collapse = ({
             onClick={onCollapse}
             disabled={disabled}
           >
-            <div className="flex items-center justify-center w-8 h-8 border border-black rounded-full click:border-brand-secondary ">
+            <div className="flex items-center justify-center w-8 h-8 border border-gray-200 rounded-full click:border-brand-secondary ">
               <ArrowUpIcon
-                className={`transition duration-200 ease-in-out ${
+                className={`transition duration-200 ease-in-out text-white ${
                   isOpen ? 'rotate-180' : ''
                 }`}
               />

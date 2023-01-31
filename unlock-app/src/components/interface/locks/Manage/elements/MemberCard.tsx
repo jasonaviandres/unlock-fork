@@ -31,8 +31,8 @@ interface DetailProps {
 const CardDetail = ({ title, value }: DetailProps) => {
   return (
     <div className="flex flex-col gap-2">
-      <span className="text-base text-gray-700">{title}</span>
-      {value && <span className="text-lg font-bold text-black">{value}</span>}
+      <span className="text-base text-gray-200">{title}</span>
+      {value && <span className="text-lg font-bold text-white">{value}</span>}
     </div>
   )
 }
@@ -119,7 +119,7 @@ export const MemberCard = ({
                 onClick={setCopied}
                 aria-label="copy"
               >
-                <CopyIcon size={20} />
+                <CopyIcon size={20} className="text-white" />
               </Button>
             </div>
           </div>
@@ -136,6 +136,7 @@ export const MemberCard = ({
                 {!refundDisabled && (
                   <Button
                     size="small"
+                    className="border-white text-white"
                     variant="outlined-primary"
                     disabled={refundDisabled}
                     aria-label="refund"
@@ -151,6 +152,7 @@ export const MemberCard = ({
                   <Button
                     variant="outlined-primary"
                     size="small"
+                    className="border-white text-white"
                     onClick={() => setExtendKeysOpen(true)}
                   >
                     Extend

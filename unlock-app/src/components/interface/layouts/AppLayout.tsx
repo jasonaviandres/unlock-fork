@@ -1,7 +1,7 @@
 import useTermsOfService from '~/hooks/useTermsOfService'
 import { useConfig } from '~/utils/withConfig'
 import Loading from '../Loading'
-import { Button, Footer, Modal } from '@unlock-protocol/ui'
+import { Button, Modal } from '@unlock-protocol/ui'
 import { AppHeader } from '../AppHeader'
 import { Container } from '../Container'
 import { useAuth } from '~/contexts/AuthenticationContext'
@@ -9,8 +9,8 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ImageBar } from '../locks/Manage/elements/ImageBar'
 import React from 'react'
-import { EMAIL_SUBSCRIPTION_FORM } from '~/constants'
-import { config } from '~/config/app'
+// import { EMAIL_SUBSCRIPTION_FORM } from '~/constants'
+// import { config } from '~/config/app'
 
 interface DashboardLayoutProps {
   title?: string
@@ -46,93 +46,93 @@ export const WalletNotConnected = () => {
   )
 }
 
-const FOOTER = {
-  subscriptionForm: {
-    title: 'Sign up for Updates',
-    description:
-      'Receive fresh news about Unlock, including new features and opportunities to contribute',
-    onSubmit: async (email: string) => {
-      const { portalId, formGuid } = EMAIL_SUBSCRIPTION_FORM
-      const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fields: [
-            {
-              name: 'email',
-              value: email,
-            },
-          ],
-        }),
-      }
+// const FOOTER = {
+//   subscriptionForm: {
+//     title: 'Sign up for Updates',
+//     description:
+//       'Receive fresh news about Unlock, including new features and opportunities to contribute',
+//     onSubmit: async (email: string) => {
+//       const { portalId, formGuid } = EMAIL_SUBSCRIPTION_FORM
+//       const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`
+//       const options = {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({
+//           fields: [
+//             {
+//               name: 'email',
+//               value: email,
+//             },
+//           ],
+//         }),
+//       }
 
-      await fetch(endpoint, options)
-    },
-  },
-  logo: {
-    url: config.unlockStaticUrl,
-  },
-  privacyUrl: `${config.unlockStaticUrl}/privacy`,
-  termsUrl: `${config.unlockStaticUrl}/terms`,
-  menuSections: [
-    {
-      title: 'About',
-      options: [
-        { label: 'About Unlock', url: `${config.unlockStaticUrl}/about` },
-        {
-          label: 'Roadmap',
-          url: 'https://docs.unlock-protocol.com/governance/roadmap/',
-        },
-        {
-          label: 'Careers',
-          url: 'https://www.notion.so/unlockprotocol/Unlock-Jobs-907811d15c4d490091eb298f71b0954c',
-        },
-      ],
-    },
-    {
-      title: 'Governance',
-      options: [
-        {
-          label: 'Unlock DAO',
-          url: 'https://unlock-protocol.com/blog/unlock-dao',
-        },
-        { label: 'Forum', url: 'https://unlock.community/' },
-        {
-          label: 'Snapshot',
-          url: 'https://snapshot.org/#/unlock-protocol.eth',
-        },
-      ],
-    },
-    {
-      title: 'Community',
-      options: [
-        { label: 'Showcase', url: 'https://showcase.unlock-protocol.com/' },
-        { label: 'Blog', url: `${config.unlockStaticUrl}/blog` },
-        { label: 'Events', url: `${config.unlockStaticUrl}/upcoming-events` },
-        { label: 'Grants', url: `${config.unlockStaticUrl}/grants` },
-      ],
-    },
-    {
-      title: 'Resources',
-      options: [
-        { label: 'Docs', url: 'https://docs.unlock-protocol.com/' },
-        { label: 'Developers', url: `${config.unlockStaticUrl}/developers` },
-        { label: 'Guides', url: `${config.unlockStaticUrl}/blog` },
-        {
-          label: 'Integrations',
-          url: 'https://docs.unlock-protocol.com/move-to-guides/plugins-and-integrations/',
-        },
-        {
-          label: 'Media kit',
-          url: 'https://unlockprotocol.notion.site/Press-Kit-35836bdcc88f400eb5bb429c477c3333',
-        },
-      ],
-    },
-  ],
-}
+//       await fetch(endpoint, options)
+//     },
+//   },
+//   logo: {
+//     url: config.unlockStaticUrl,
+//   },
+//   privacyUrl: `${config.unlockStaticUrl}/privacy`,
+//   termsUrl: `${config.unlockStaticUrl}/terms`,
+//   menuSections: [
+//     {
+//       title: 'About',
+//       options: [
+//         { label: 'About Unlock', url: `${config.unlockStaticUrl}/about` },
+//         {
+//           label: 'Roadmap',
+//           url: 'https://docs.unlock-protocol.com/governance/roadmap/',
+//         },
+//         {
+//           label: 'Careers',
+//           url: 'https://www.notion.so/unlockprotocol/Unlock-Jobs-907811d15c4d490091eb298f71b0954c',
+//         },
+//       ],
+//     },
+//     {
+//       title: 'Governance',
+//       options: [
+//         {
+//           label: 'Unlock DAO',
+//           url: 'https://unlock-protocol.com/blog/unlock-dao',
+//         },
+//         { label: 'Forum', url: 'https://unlock.community/' },
+//         {
+//           label: 'Snapshot',
+//           url: 'https://snapshot.org/#/unlock-protocol.eth',
+//         },
+//       ],
+//     },
+//     {
+//       title: 'Community',
+//       options: [
+//         { label: 'Showcase', url: 'https://showcase.unlock-protocol.com/' },
+//         { label: 'Blog', url: `${config.unlockStaticUrl}/blog` },
+//         { label: 'Events', url: `${config.unlockStaticUrl}/upcoming-events` },
+//         { label: 'Grants', url: `${config.unlockStaticUrl}/grants` },
+//       ],
+//     },
+//     {
+//       title: 'Resources',
+//       options: [
+//         { label: 'Docs', url: 'https://docs.unlock-protocol.com/' },
+//         { label: 'Developers', url: `${config.unlockStaticUrl}/developers` },
+//         { label: 'Guides', url: `${config.unlockStaticUrl}/blog` },
+//         {
+//           label: 'Integrations',
+//           url: 'https://docs.unlock-protocol.com/move-to-guides/plugins-and-integrations/',
+//         },
+//         {
+//           label: 'Media kit',
+//           url: 'https://unlockprotocol.notion.site/Press-Kit-35836bdcc88f400eb5bb429c477c3333',
+//         },
+//       ],
+//     },
+//   ],
+// }
 
 export const AppLayout = ({
   title,
@@ -153,7 +153,7 @@ export const AppLayout = ({
   const showLogin = authRequired && !account
 
   return (
-    <div className="bg-ui-secondary-200">
+    <div className="bg-[#090909]">
       <Modal
         isOpen={!termsAccepted}
         setIsOpen={() => {
@@ -193,11 +193,13 @@ export const AppLayout = ({
               <div className="flex flex-col gap-10">
                 {(title || description) && (
                   <div className="flex flex-col gap-4">
-                    {title && <h1 className="text-4xl font-bold">{title}</h1>}
+                    {title && (
+                      <h1 className="text-4xl font-bold text-white">{title}</h1>
+                    )}
                     {description && (
-                      <div className="w-full text-base text-gray-700">
+                      <p className="w-full text-base text-gray-700">
                         {description}
-                      </div>
+                      </p>
                     )}
                   </div>
                 )}
@@ -212,9 +214,9 @@ export const AppLayout = ({
             </Container>
           </div>
         </div>
-        <div className="px-4 mx-auto lg:container">
+        {/* <div className="px-4 mx-auto lg:container">
           <Footer {...FOOTER} />
-        </div>
+        </div> */}
       </div>
     </div>
   )

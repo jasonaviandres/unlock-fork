@@ -42,7 +42,7 @@ export const CheckoutForm = ({
               key={index}
               className={({ selected }) => {
                 return `font-medium outline-none ${
-                  selected ? 'text-brand-ui-primary' : ''
+                  selected ? 'text-white' : 'text-gray-200'
                 }`
               }}
               onClick={() => setTabOpen(index)}

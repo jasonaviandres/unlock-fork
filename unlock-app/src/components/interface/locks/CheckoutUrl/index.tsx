@@ -7,8 +7,8 @@ import { CheckoutPreview } from './elements/CheckoutPreview'
 const Header = () => {
   return (
     <header className="flex flex-col gap-4">
-      <h1 className="text-4xl font-bold">Checkout Builder</h1>
-      <span className="text-base text-gray-700">
+      <h1 className="text-4xl font-bold text-white">Checkout Builder</h1>
+      <span className="text-base text-gray-200">
         Customize your membership checkout experience. The preview on the left
         is updated in realtime.
       </span>

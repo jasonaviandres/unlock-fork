@@ -13,13 +13,17 @@ const Locks: NextPage = () => {
   const Description = () => {
     return (
       <div className="flex flex-col gap-4 md:gap-0 md:justify-between md:flex-row">
-        <span className="w-full max-w-lg text-base text-gray-700">
-          A Lock is a smart contract you create, deploy, and own on Unlock
-          Protocol
+        <span className="w-full max-w-lg text-base text-white/70">
+          An Event is a smart contract you create, deploy, and own on MoonLab
         </span>
         {account && (
           <Link href="/locks/create">
-            <Button size="large">Create Lock</Button>
+            <Button
+              className="bg-gray-600 hover:bg-white hover:text-black"
+              size="large"
+            >
+              Create Event
+            </Button>
           </Link>
         )}
       </div>
@@ -27,7 +31,7 @@ const Locks: NextPage = () => {
   }
   return (
     <BrowserOnly>
-      <AppLayout title="Locks" description={<Description />}>
+      <AppLayout title="Events" description={<Description />}>
         <LocksListPage />
       </AppLayout>
     </BrowserOnly>

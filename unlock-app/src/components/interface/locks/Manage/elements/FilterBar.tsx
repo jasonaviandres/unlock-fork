@@ -100,7 +100,7 @@ export const FilterBar = ({
   const Expiration = () => {
     return (
       <div className="flex flex-col gap-4">
-        <span className="text-base">Expiration Status</span>
+        <span className="text-base text-white">Expiration Status</span>
         <div className="flex gap-3">
           {expirations.map((value: ExpirationStatus, index) => {
             const isActive = value === expiration
@@ -124,7 +124,7 @@ export const FilterBar = ({
   const disableSearch = filterKey === 'checkedInAt'
 
   return (
-    <div className="flex flex-col gap-4 px-2 py-4 rounded-lg md:px-8 bg-ui-secondary-400">
+    <div className="flex flex-col gap-4 px-2 py-4 rounded-lg md:px-8 bg-gray-800">
       <div className="flex items-center md:h-12 md:justify-between">
         <div className="flex flex-col items-start gap-8 md:items-center md:flex-center md:flex-row">
           <Button
@@ -132,15 +132,15 @@ export const FilterBar = ({
             onClick={() => setExpandFilter(!expandFilter)}
           >
             <div className="flex items-center gap-2">
-              <span className="text-sm">Filter</span>
-              <FilterIcon size={18} />
+              <span className="text-sm text-white">Filter</span>
+              <FilterIcon size={18} className="text-white" />
             </div>
           </Button>
           {openSearch ? (
             <div className="flex flex-col gap-2 md:flex-row">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col items-start gap-2 md:items-center md:flex-row">
-                  <span className="mb-1">Filter by</span>
+                  <span className="mb-1 text-white">Filter by</span>
                   <div className="w-full md:w-40">
                     <Select
                       size="small"
@@ -173,8 +173,8 @@ export const FilterBar = ({
               className="p-0"
             >
               <div className="flex items-center gap-2">
-                <span className="text-sm">Search</span>
-                <SearchIcon size={18} />
+                <span className="text-sm text-white">Search</span>
+                <SearchIcon size={18} className="text-white" />
               </div>
             </Button>
           )}

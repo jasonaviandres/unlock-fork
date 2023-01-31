@@ -77,14 +77,14 @@ interface CheckoutHeadProps {
   iconURL?: string
 }
 
-export function CheckoutHead({ title, iconURL }: CheckoutHeadProps) {
+export function CheckoutHead({ title }: CheckoutHeadProps) {
   return (
     <header className="px-6 py-2 space-y-2">
       <div className="inset-0 flex flex-wrap items-center flex-1 gap-6">
         <Avatar.Root>
           <Avatar.Image
             className="inline-flex items-center justify-center w-16 h-16 rounded-full"
-            src={iconURL}
+            src={'/images/svg/default-moonlab-avatar.svg'}
             alt={title}
             width={64}
             height={64}
@@ -98,7 +98,7 @@ export function CheckoutHead({ title, iconURL }: CheckoutHeadProps) {
           </Avatar.Fallback>
         </Avatar.Root>
         <div>
-          <h1 className="text-lg font-bold"> {title || 'Unlock Protocol'} </h1>
+          <h1 className="text-lg font-bold"> {title || 'MoonLab'} </h1>
         </div>
       </div>
     </header>

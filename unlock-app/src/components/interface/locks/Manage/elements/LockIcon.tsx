@@ -267,17 +267,15 @@ const LockIconPlaceholder = () => {
 }
 
 export const LockIcon = ({ lockAddress, network, loading }: LockIconProps) => {
-  const config = useConfig()
+  // const config = useConfig()
   const [isOpen, setIsOpen] = useState(false)
 
   const [imageSrc, setImageSrc] = useState<string | null>(
-    lockAddress
-      ? `${config.services.storage.host}/lock/${lockAddress}/icon`
-      : '/images/svg/default-lock-logo.svg'
+    '/images/svg/default-moonlab-avatar.svg'
   )
 
   const handleError = () => {
-    setImageSrc('/images/svg/default-lock-logo.svg')
+    setImageSrc('/images/svg/default-moonlab-avatar.svg')
   }
 
   const onDismiss = (image: string | null) => {
@@ -310,7 +308,12 @@ export const LockIcon = ({ lockAddress, network, loading }: LockIconProps) => {
           </div>
         </div>
 
-        <img src={imageSrc!} alt="Lock image" onError={handleError} />
+        <img
+          src={imageSrc!}
+          className="h-full w-full"
+          alt="Lock image"
+          onError={handleError}
+        />
       </div>
     </>
   )

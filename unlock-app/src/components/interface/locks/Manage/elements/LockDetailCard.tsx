@@ -13,7 +13,7 @@ import { LockIcon } from './LockIcon'
 import Duration from '~/components/helpers/Duration'
 import { CryptoIcon } from '../../elements/KeyPrice'
 import useLock from '~/hooks/useLock'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { storage } from '~/config/storage'
 
 interface LockDetailCardProps {
@@ -40,29 +40,29 @@ interface LockInfoCardProps {
 const LockInfoCardPlaceholder = () => {
   return (
     <div className="flex flex-col gap-2">
-      <div className="w-full h-10 animate-pulse bg-slate-200"></div>
+      <div className="w-full h-10 animate-pulse bg-gray-600"></div>
       <div className="flex gap-3">
-        <div className="w-40 h-4 animate-pulse bg-slate-200"></div>
-        <div className="w-5 h-4 animate-pulse bg-slate-200"></div>
+        <div className="w-40 h-4 animate-pulse bg-gray-600"></div>
+        <div className="w-5 h-4 animate-pulse bg-gray-600"></div>
       </div>
     </div>
   )
 }
 
 const DetailValuePlaceholder = () => {
-  return <div className="w-10 h-5 animate-pulse bg-slate-200"></div>
+  return <div className="w-10 h-5 animate-pulse bg-gray-600"></div>
 }
 
 const Detail = ({ label, value, prepend, loading, append }: DetailProps) => {
   return (
-    <div className="flex justify-between py-2 border-b border-black last-of-type:border-0">
-      <span className="text-base">{label}</span>
+    <div className="flex justify-between py-2 border-b border-white last-of-type:border-0">
+      <span className="text-base text-gray-200">{label}</span>
       {loading ? (
         <DetailValuePlaceholder />
       ) : (
         <div className="flex items-center gap-2 text-right">
           {prepend && <>{prepend}</>}
-          <span className="text-base font-bold text-black">{value ?? '-'}</span>
+          <span className="text-base font-bold text-white">{value ?? '-'}</span>
           {append && <>{append}</>}
         </div>
       )}
@@ -95,7 +95,7 @@ const LockInfoCard = ({
 
   return (
     <>
-      <span className="text-4xl font-bold text-black">{name}</span>
+      <span className="text-4xl font-bold text-white">{name}</span>
       <div className="flex items-center gap-2.5">
         <div>
           <Tooltip
@@ -109,9 +109,11 @@ const LockInfoCard = ({
           </Tooltip>
         </div>
 
-        <span className="text-base">{addressMinify(lockAddress)}</span>
+        <span className="text-base text-white">
+          {addressMinify(lockAddress)}
+        </span>
         <Button variant="borderless" onClick={setCopied} aria-label="copy">
-          <CopyIcon size={20} />
+          <CopyIcon size={20} className="text-white" />
         </Button>
         <a href={explorerUrl} target="_blank" rel="noreferrer">
           <Button
@@ -119,7 +121,7 @@ const LockInfoCard = ({
             className="p-0 m-0"
             aria-label="external link"
           >
-            <ExternalLinkIcon size={20} className="text-brand-ui-primary" />
+            <ExternalLinkIcon size={20} className="text-gray-200" />
           </Button>
         </a>
       </div>
@@ -201,7 +203,7 @@ export const LockDetailCard = ({
       }
     )
 
-  const settingsPageUrl = `/locks/settings?address=${lockAddress}&network=${network}`
+  // const settingsPageUrl = `/locks/settings?address=${lockAddress}&network=${network}`
 
   return (
     <>
@@ -231,9 +233,9 @@ export const LockDetailCard = ({
                   {lockMetadata.external_url}
                 </a>
               )}
-              {lockMetadata?.description && (
-                <p className="text-gray-700 ">{lockMetadata.description}</p>
-              )}
+              {/* {lockMetadata?.description && (
+                <p className="text-gray-300 ">{lockMetadata.description}</p>
+              )} */}
             </div>
           )}
           <div className="flex flex-col mt-6">
@@ -261,7 +263,7 @@ export const LockDetailCard = ({
               loading={loading}
             />
           </div>
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <span className="text-sm leading-tight text-gray-500">
               Need to update terms?{' '}
               <Link href={settingsPageUrl}>
@@ -271,7 +273,7 @@ export const LockDetailCard = ({
               </Link>{' '}
               to update your contract&apos;s settings.
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

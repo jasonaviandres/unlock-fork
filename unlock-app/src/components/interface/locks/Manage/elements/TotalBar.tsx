@@ -52,13 +52,14 @@ const Total = ({
   return (
     <div className="flex flex-col gap-3 pt-4 first-of-type:pt-0 md:py-0 md:pl-4 grow shrink-0 basis-0">
       <div className="flex items-start gap-4">
-        <span className="text-base text-gray-700">{title}</span>
+        <span className="text-base text-gray-200">{title}</span>
         {action && (
           <Button
             variant="outlined-primary"
             size="tiny"
             onClick={onAction}
             disabled={actionDisabled}
+            className="text-white border-white"
           >
             <div className="flex gap-1 flex-items-center">
               <span>{action.title}</span>
@@ -73,9 +74,11 @@ const Total = ({
         <div className="flex items-center gap-2">
           {prepend}
           <>
-            <span className="text-2xl font-bold md:text-4xl">{value || 0}</span>
+            <span className="text-2xl font-bold md:text-4xl text-white">
+              {value || 0}
+            </span>
             {description && (
-              <span className="block text-xs text-gray-700">{description}</span>
+              <span className="block text-xs text-white">{description}</span>
             )}
           </>
         </div>

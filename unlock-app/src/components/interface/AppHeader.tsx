@@ -20,8 +20,8 @@ interface LinksProps {
 }
 
 const links: Link[] = [
-  { label: 'Locks', url: '/locks' },
-  { label: 'Keys', url: '/keychain' },
+  { label: 'Events', url: '/locks' },
+  { label: 'Tickets', url: '/keychain' },
   { label: 'Settings', url: '/settings' },
 ]
 
@@ -43,7 +43,7 @@ export const AppHeader = ({ showLinks = true }: AppHeaderProps) => {
           mobile
             ? 'absolute left-0 right-0 block h-auto px-10 pt-20 top-20'
             : ''
-        } bg-ui-secondary-200`}
+        } bg-[#090909]`}
       >
         <ul className="flex flex-col gap-8 md:px-0 md:flex-row">
           {links?.map(({ label, url }, index) => {
@@ -51,7 +51,9 @@ export const AppHeader = ({ showLinks = true }: AppHeaderProps) => {
             return (
               <li
                 key={index}
-                className={`text-lg ${isActive ? 'text-brand-ui-primary' : ''}`}
+                className={`text-lg ${
+                  isActive ? 'text-white' : 'text-white/50'
+                }`}
               >
                 <Link href={url}>{label}</Link>
               </li>
@@ -68,7 +70,7 @@ export const AppHeader = ({ showLinks = true }: AppHeaderProps) => {
   }
 
   return (
-    <div className="pt-5 bg-ui-secondary-200">
+    <div className=" pt-3 bg-[#090909]">
       <Modal isOpen={disconnectModal} setIsOpen={setDisconnectModal}>
         <div className="flex flex-col gap-10">
           <div className="flex">
@@ -95,7 +97,7 @@ export const AppHeader = ({ showLinks = true }: AppHeaderProps) => {
       </Modal>
 
       <Container>
-        <div className="flex h-12 justify-between">
+        <div className="flex justify-between items-center">
           <div className="flex items-center gap-10">
             <div className="flex gap-2">
               <button
@@ -106,10 +108,10 @@ export const AppHeader = ({ showLinks = true }: AppHeaderProps) => {
                 {isOpen ? <MenuCloseIcon size={20} /> : <MenuIcon size={20} />}
               </button>
 
-              <div className="h-5 md:h-6">
+              <div className="h-5 md:h-14">
                 <img
                   className="h-full"
-                  src="/images/svg/unlock-logo.svg"
+                  src="/images/svg/moonlab-logo.png"
                   alt="logo"
                 />
               </div>
@@ -135,14 +137,9 @@ export const AppHeader = ({ showLinks = true }: AppHeaderProps) => {
             {account ? (
               <div className="flex gap-2">
                 <button onClick={() => setDisconnectModal(true)}>
-                  <div className="flex items-center gap-2">
-                    <span className="text-brand-ui-primary">
-                      {addressMinify(account)}
-                    </span>
-                    <DisconnectIcon
-                      className="text-brand-ui-primary"
-                      size={20}
-                    />
+                  <div className="flex items-center gap-2 border px-6 py-3 rounded-full hover:bg-white/10">
+                    <span className="text-white">{addressMinify(account)}</span>
+                    <DisconnectIcon className="text-white" size={20} />
                   </div>
                 </button>
               </div>

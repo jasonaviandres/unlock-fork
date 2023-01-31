@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "moon-lab"
+  },
+  "targets": {
+    "moon-lab": {
+      "hosting": {
+        "moonlab-ticketing-demo": [
+          "moonlab-ticketing-demo"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

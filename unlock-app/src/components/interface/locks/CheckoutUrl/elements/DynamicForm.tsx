@@ -109,7 +109,7 @@ const TextInput = ({ props, type, errors, ...rest }: FieldProps) => {
       <ConnectForm>
         {({ register }: any) => (
           <select
-            className="block w-full box-border rounded-lg transition-all shadow-sm border border-gray-400 hover:border-gray-500 focus:ring-gray-500 focus:border-gray-500 focus:outline-none flex-1 disabled:bg-gray-100 pl-2.5 py-1.5 text-sm"
+            className="block w-full box-border rounded-lg transition-all shadow-sm border bg-black border-gray-400 hover:border-gray-500 focus:ring-gray-500 focus:border-gray-500 focus:outline-none flex-1 disabled:bg-gray-100 pl-2.5 py-1.5 text-sm"
             {...register(rest.name)}
             {...rest}
           >
@@ -121,7 +121,7 @@ const TextInput = ({ props, type, errors, ...rest }: FieldProps) => {
           </select>
         )}
       </ConnectForm>
-      <span className="text-xs text-gray-600 ">{rest.description}</span>
+      <span className="text-xs text-gray-200 ">{rest.description}</span>
     </>
   )
 }
@@ -144,7 +144,7 @@ const BooleanInput = ({ props, name, label, ...rest }: any) => {
                 <label htmlFor={name}>{label}</label>
               </div>
               {rest?.description && (
-                <span className="text-xs text-gray-600 ">
+                <span className="text-xs text-gray-200 ">
                   {rest?.description}
                 </span>
               )}
@@ -210,9 +210,7 @@ export const DynamicForm = ({
       {description && <>{description}</>}
       <FormProvider {...methods}>
         {title && (
-          <h2 className="mb-2 text-lg font-bold text-brand-ui-primary">
-            {title}
-          </h2>
+          <h2 className="mb-2 text-lg font-bold text-white">{title}</h2>
         )}
         <form
           className="flex flex-col gap-3 outline-none"

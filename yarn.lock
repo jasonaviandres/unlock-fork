@@ -13441,6 +13441,7 @@ __metadata:
     jest: 29.3.1
     lint-staged: 13.1.0
     prettier: 2.8.1
+    react-to-print: 2.14.11
     siwe: 1.1.6
     ts-jest: 29.0.3
     tsup: 6.5.0
@@ -27433,7 +27434,7 @@ fsevents@~2.1.1:
     yargs-parser: ^16.1.0
   bin:
     gluegun: bin/gluegun
-  checksum: 7a45a5a606a1e651c891467a693552b5237f8e90410f9c9daad4621ff0693d1c92b69aa35fc30eccf7c3b92ee724f15fc297e054086cfb312717ef01f48d2290
+  checksum: 71abe7f31555f169a47510675596f79193c8f55e4beeb4e6efa06c22d41988fa9c747d5e398af7f8401cca22c08ffb7a6d57b03d764c14858513c9eba23b53b8
   languageName: node
   linkType: hard
 
@@ -42000,6 +42001,18 @@ fsevents@~2.1.1:
   peerDependencies:
     react: ^18.2.0
   checksum: 6b6980ced93fa2b72662d5e4ab3b4896833586940047ce52ca9aca801e5432adf05fcbe28289b0af3ce6a2a7c590974e25dcc8aa43d0de658bfe8bbcd686f958
+  languageName: node
+  linkType: hard
+
+"react-to-print@npm:2.14.11":
+  version: 2.14.11
+  resolution: "react-to-print@npm:2.14.11"
+  dependencies:
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: c38c17092b92dc5ad33011635892ee4cede68aba29c0691d33274e236034dd9138cc432b902d0a2ee769a783f1e412ee42f8a5155231285a38c82200ab48f035
   languageName: node
   linkType: hard
 
